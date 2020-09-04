@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import MovieCard from "./MovieCard";
 
+import styles from "./MovieList.module.css";
+
 interface Movie {
   title: string;
   poster: string;
@@ -16,7 +18,7 @@ const MovieList: FC<Props> = ({ moviesList }) => {
   }
 
   return (
-    <div>
+    <div className={styles.list}>
       {moviesList.map(({ title, poster }) => (
         <MovieCard title={title} poster={poster} />
       ))}
