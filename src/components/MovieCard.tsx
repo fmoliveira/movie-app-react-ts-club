@@ -5,9 +5,11 @@ interface Props {
   poster: string;
 }
 
+const imagesPrefix = "https://image.tmdb.org/t/p/w500/";
+
 const MovieCard: FC<Props> = ({ title, poster }) => (
   <div>
-    <img src={poster} alt={`Poster for movie ${title}`} />
+    <img src={imagesPrefix + poster} alt={`Poster for movie ${title}`} />
     <p>{title}</p>
   </div>
 );
