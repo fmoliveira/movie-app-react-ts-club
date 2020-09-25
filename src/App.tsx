@@ -1,14 +1,14 @@
-import React from "react";
+import * as React from "react";
+import { QueryCache, ReactQueryCacheProvider } from "react-query";
+import HomePage from "./pages/HomePage";
 
-import NavBar from "./components/NavBar";
-import MovieList from "./components/MovieList";
+const queryCache = new QueryCache();
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <MovieList moviesList={[]} />
-    </div>
+    <ReactQueryCacheProvider queryCache={queryCache}>
+      <HomePage />
+    </ReactQueryCacheProvider>
   );
 }
 
