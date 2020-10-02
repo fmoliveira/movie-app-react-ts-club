@@ -1,6 +1,7 @@
 import fetch from "isomorphic-fetch";
 
 const API_URL = "https://api.themoviedb.org/3/discover/movie";
+const IMAGE_PREFIX = "https://image.tmdb.org/t/p/w500/";
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 // types returned by the api
@@ -19,7 +20,6 @@ export interface Movie {
   id: number;
   title: string;
   poster: string;
-  backdrop?: string;
 }
 
 const getMovies = async (): Promise<Movie[]> => {
@@ -32,7 +32,7 @@ const getMovies = async (): Promise<Movie[]> => {
       data.results.map((movie) => ({
         id: movie.id,
         title: movie.title,
-        poster: movie.poster_path,
+        poster: IMAGE_PREFIX + movie.poster_path,
       }))
     );
 };

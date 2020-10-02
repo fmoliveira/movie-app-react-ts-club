@@ -6,13 +6,7 @@ import queryString from "query-string";
 
 import searchMovies from "../api/searchMovies";
 import MovieList from "../components/MovieList";
-
-const getSearchTerm = (query: string | string[] | null) => {
-  if (!query) return "";
-  if (Array.isArray(query)) return query.join(" ");
-
-  return query;
-};
+import getSearchTerm from "../utils/getSearchTerm";
 
 const SearchPage: FC = () => {
   const { search } = useLocation();
