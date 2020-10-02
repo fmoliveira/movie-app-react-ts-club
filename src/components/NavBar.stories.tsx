@@ -1,5 +1,4 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
 import NavBar from "./NavBar";
 
 export default {
@@ -7,4 +6,4 @@ export default {
   component: NavBar,
 };
 
-export const normal = () => <NavBar onSearch={action("Search Event")} />;
+export const normal = () => <NavBar />;

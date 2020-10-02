@@ -1,6 +1,6 @@
 import fetch from "isomorphic-fetch";
 
-import { Movie } from "./searchMovies";
+import { Movie } from "./getMovies";
 
 const API_URL = "https://api.themoviedb.org/3/search/movie";
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
